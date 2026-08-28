@@ -1,6 +1,6 @@
-package org.example;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package com.example;
+
+// Nivel 1- Exercício 1:
 class Main {
     public static void main(String[] args) {
         int valorInt = 12;
