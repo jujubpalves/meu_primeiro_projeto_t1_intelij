@@ -1,20 +1,22 @@
 import java.util.Scanner;
 
-// Exercício 8 - Auxílio Combustível
+// Exercício 10 - Aprovação de Empréstimo Pessoal
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Você possui veículo próprio? (sim/nao): ");
-         String resposta  = sc.nextLine();
+        System.out.print("Digite o valor do seu salário: ");
+        double salario  = sc.nextDouble();
+        System.out.print("Digite o valor da parcela: ");
+        double parcela  = sc.nextDouble();
 
 
-        if (resposta.equalsIgnoreCase("Sim")) {
-            System.out.println("Auxílio combustível disponível.");
-        } else {
-            System.out.println("Não possui auxílio combustível.");
+        if ( parcela <= salario * 0.30 ) {
+            System.out.println("Empréstimo aprovado.");
+        }else{
+            System.out.println("Empréstimo não aprovado.");
         }
     }
 }
