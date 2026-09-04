@@ -1,16 +1,22 @@
-package com.example;
+package org.example;
+import java.util.Scanner;
 
-// Nivel 1 - Exercício 1:
-class Main {
+// Exercício 4
+public class Main {
     public static void main(String[] args) {
-                float varF = 2.7f;
-                long varL = (long) varF;
-                double varD = varL;
+        Scanner sc = new Scanner(System.in);
+        double nota = sc.nextDouble();
 
-                System.out.println("Valor do float: " + varF);
-                System.out.println("Valor do long: " + varL);
-                System.out.println("Valor do double: " + varD);
-            }
+
+        if (nota >= 9 ){
+            System.out.println("Excelente");
+        } else if(nota <= 7) {
+            System.out.println("Bom");
         }
 
-
+        if (nota >= 5 ){
+            System.out.println("Regular");
+        } else  {
+            System.out.println("Insuficiente");
+        }
+    }
