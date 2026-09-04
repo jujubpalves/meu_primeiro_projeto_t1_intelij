@@ -7,7 +7,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o tempo de contratação: ");
+        System.out.print("Digite o tempo de contratação (meses): ");
         double tempo = sc.nextDouble();
 
 
