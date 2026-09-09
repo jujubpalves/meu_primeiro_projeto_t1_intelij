@@ -1,14 +1,29 @@
+import java.util.Scanner;
 
-//Nivel 2- Exercício 1
+// Nivel 2 - Exercicio 2
 public class Main {
     public static void main(String[] args) {
-        int A= 20;
-        int B= 21;
-        System.out.println(
-                "A é igual a B? "+ ( A == B ) +"\nA é menor a B? " + (A<B) +
-                        "\nA é difrente a B? " + (A!=B) +"+
-                         "\nA é maior que B? " + (A>B)"+
-                         "\nA é maior ou igual que B? " + (A >= B)"+
-                         "\nA é menor ou igual que B? " + (A<=B));
+        Scanner sc = new Scanner(System.in);
+
+
+        System.out.print("Digite a sua nota de 0 a 10: ");
+        double nota  = sc.nextDouble();
+
+        boolean cond1 = ((nota >= 7.5) && (nota <= 10));
+        boolean cond2 = ((nota >= 6) && (nota <= 7.5));
+        boolean cond3 = ((nota >= 5) && (nota <= 6));
+
+
+        if ( cond1 ) {
+            System.out.println("Nota Excelente.");
+        }else if (cond2){
+            System.out.println("Nota Boa.");
+        }else if (cond3){
+        System.out.println("Nota Regular.");
+        }else if (nota>10){
+            System.out.println("Valor incorreto.");
+        }else {
+        System.out.println("Reprovado.");
     }
-}
+    }
+    }
