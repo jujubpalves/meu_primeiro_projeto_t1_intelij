@@ -1,16 +1,13 @@
 import java.util.Scanner;
 
-//Nivel 3 - Exercicio 1
+//Nivel 3 - Exercicio 2
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("por favor, diga sua nota de ingles (10 a 0)");
-        double nota1= sc.nextDouble ();
-        System.out.println("por favor, diga sua nota de matemática (10 a 0)");
-        double nota2= sc.nextDouble ();
-        System.out.println("por favor, diga sua nota de portugues (10 a 0)");
-        double nota3= sc.nextDouble ();
-        double media = (nota1 + nota2 + nota3)/ 3;
-        System.out.println ("média:\n" + media);
+        System.out.println("Fale a temperatura em °C");
+        double celsius= sc.nextDouble ();
+        double faren = (celsius*9/5) + 32;
+        System.out.println ("temperatura em farenheit\n" + faren + " °F");
     }
 }
+
