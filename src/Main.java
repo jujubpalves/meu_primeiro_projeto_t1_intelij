@@ -1,10 +1,14 @@
 
-//Nivel 1- Exercício 4
+//Nivel 2- Exercício 1
 public class Main {
     public static void main(String[] args) {
-        short A=20;
-        int B= (int) A;
-        byte C=(byte) A;
-        System.out.println( "valor do short: "+ A +"\nvalor do int: " + B +"\nvalor do byte: " + C);
+        int A= 20;
+        int B= 21;
+        System.out.println(
+                "A é igual a B? "+ ( A == B ) +"\nA é menor a B? " + (A<B) +
+                        "\nA é difrente a B? " + (A!=B) +"+
+                         "\nA é maior que B? " + (A>B)"+
+                         "\nA é maior ou igual que B? " + (A >= B)"+
+                         "\nA é menor ou igual que B? " + (A<=B));
     }
 }
