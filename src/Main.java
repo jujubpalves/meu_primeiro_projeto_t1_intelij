@@ -1,12 +1,18 @@
 import java.util.Scanner;
 
-//Nivel 3 - Exercicio 3
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.println("dê o valor do lado (m)");
-    double base= sc.nextDouble ();
-    double area = base * base;
-    System.out.println ("area do quadrado\n" + area + " m²");
+//Nivel 4 - Exercicio
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("digite o valor do real:");
+        double real= sc.nextDouble ();
+
+        double dolar = real*0.1941;
+
+
+        System.out.println ("valor do real convertido em dolar:\n" + "U$" +
+                dolar );
+    }
 }
-}
+
 
