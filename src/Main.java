@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
-//Nivel 4 - Exercicio 5
+//Nivel 5 - Exercicio 1
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        System.out.print("digite o valor de A: ");
-        double n1 = sc.nextDouble ();
-        double n3 = n1;
-        System.out.print("digite o valor de B: ");
-        double n2 = sc.nextDouble ();
-        n1 = n2;
-        System.out.println("O valor de A foi atualizado para o valor de B: " + n1);n2 = n3;2
-        System.out.println("O valor de B foi atualizado para o valor de A: " + n2);
+        System.out.print("digite seu peso [kg]: ");
+        double peso = sc.nextDouble ();
+
+        System.out.print("digite sua altura [m]: ");
+        double alt = sc.nextDouble ();
+        double IMC = peso / (alt * alt);
+        System.out.println("Seu IMC é: " + IMC);
     }
 }
