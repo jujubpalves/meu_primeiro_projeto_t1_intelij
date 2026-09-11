@@ -1,17 +1,24 @@
+package org.example;
 import java.util.Scanner;
 
-//Atividade 1 - Controle de Entrada em Evento
+// Exercicios de estrutura de decisão
+// Exercício 11 - Classificação de Clientes por Investimento
+
 public class Main {
-
     public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
 
-       Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o valor investido pelo cliente (R$):");
+        double investimento = entrada.nextDouble();
 
-       for (int i = 1; i <= 10; i++){
-           System.out.print("Digite o nome do participante " + i + ": ");
-           String nome = scanner.nextLine();
-
-           System.out.println(" Participante " + nome + " registrado  com sucesso!");
-       }
+        if (investimento <= 10000) {
+            System.out.println("Classificação do cliente: Bronze");
+        } else if (investimento <= 50000) {
+            System.out.println("Classificação do cliente: Prata");
+        } else if (investimento <= 100000) {
+            System.out.println("Classificação do cliente: Ouro");
+        } else {
+            System.out.println("Classificação do cliente: Platinum");
+        }
     }
 }
