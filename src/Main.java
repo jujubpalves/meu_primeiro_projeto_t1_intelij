@@ -2,23 +2,21 @@ package org.example;
 import java.util.Scanner;
 
 // Exercicios de estrutura de decisão
-// Exercício 11 - Classificação de Clientes por Investimento
+// Exercício 12 - Elegibilidade para Cartão Premium
 
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
+        System.out.println("Digite a renda mensal do cliente (R$):");
+        double renda = entrada.nextDouble();
 
-        System.out.println("Digite o valor investido pelo cliente (R$):");
-        double investimento = entrada.nextDouble();
+        System.out.println("Digite o score de crédito do cliente:");
+        int score = entrada.nextInt();
 
-        if (investimento <= 10000) {
-            System.out.println("Classificação do cliente: Bronze");
-        } else if (investimento <= 50000) {
-            System.out.println("Classificação do cliente: Prata");
-        } else if (investimento <= 100000) {
-            System.out.println("Classificação do cliente: Ouro");
+        if (renda > 8000 && score > 700) {
+            System.out.println("Cartão Premium aprovado!");
         } else {
-            System.out.println("Classificação do cliente: Platinum");
+            System.out.println("Cartão Premium negado. É necessário ter renda acima de R$ 8.000 e score acima de 700.");
         }
     }
 }
