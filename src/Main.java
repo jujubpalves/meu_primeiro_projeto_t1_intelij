@@ -1,22 +1,25 @@
 import java.util.Scanner;
 
 //Estrtura de repetição
-// Atividade 4 - Pesquisa de Satisfação
+// Atividade 5 - Caixa de Supermercado
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int notaSatisfacao = 0;
-        int qtdCliente = 0;
+        double valorProduto, soma;
+        String continuar;
 
-        System.out.println("Informe a sua nota: ");
+        soma = 0;
+        do {
+            System.out.println("Informe o valor do produto");
+            valorProduto = entrada.nextDouble();
+            soma = soma + valorProduto;
+            System.out.println("Continuar? (y)");
 
-        while (qtdCliente < 10) {
-            qtdCliente++;
-            System.out.println("Cliente " +  qtdCliente + ", informe a sua nota: ");
-            notaSatisfacao = entrada.nextInt();
+            entrada.nextLine();
+            continuar = entrada.nextLine();
+        }while (continuar.equals("y") || continuar.equals("y"));
 
+        System.out.println("Total da Compra: " + soma);
 
-        }
-        System.out.println("Quantidade de clientes participantes " + qtdCliente);
     }
 }
