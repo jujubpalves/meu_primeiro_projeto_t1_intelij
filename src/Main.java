@@ -1,25 +1,34 @@
 import java.util.Scanner;
 
-//Estrtura de repetição
-// Atividade 5 - Caixa de Supermercado
 public class Main {
     public static void main(String[] args) {
+
         Scanner entrada = new Scanner(System.in);
-        double valorProduto, soma;
-        String continuar;
 
-        soma = 0;
-        do {
-            System.out.println("Informe o valor do produto");
-            valorProduto = entrada.nextDouble();
-            soma = soma + valorProduto;
-            System.out.println("Continuar? (y)");
+        double[] producao = new double[7];
 
-            entrada.nextLine();
-            continuar = entrada.nextLine();
-        }while (continuar.equals("y") || continuar.equals("y"));
+        double total = 0;
+        double maior = 0;
 
-        System.out.println("Total da Compra: " + soma);
+        for (int i = 0; i < producao.length; i++) {
 
+            System.out.print("Digite a produção da semana " + (i + 1) + ", em toneladas: ");
+            producao[i] = entrada.nextDouble();
+
+            total += producao[i];
+
+            if (i == 0 || producao[i] > maior) {
+                maior = producao[i];
+            }
+        }
+
+        double media = total / producao.length;
+
+        System.out.println("===== RESULTADOS =====");
+        System.out.println("Produção total: " + total + " toneladas");
+        System.out.println("Média semanal: " + media + " toneladas");
+        System.out.println("Maior produção registrada: " + maior + " toneladas");
+
+        entrada.close();
     }
 }
