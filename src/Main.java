@@ -5,24 +5,27 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        double[] temperaturas = new double[10];
+        double[] consumo = new double[12];
 
-        int diasAcimaDe30 = 0;
+        double maiorConsumo =0;
+        int setorMaiorConsumo = 0;
 
-        for (int i = 0; i < temperaturas.length; i++) {
+        for (int i = 0; i < consumo.length; i++) {
 
-            System.out.print("Digite a temperatura do dia " + (i + 1) + ", em °C: ");
-            temperaturas[i] = entrada.nextDouble();
+            System.out.print("Digite o consumo de água do setor  " + (i + 1) + ", em litros: ");
+            consumo[i] = entrada.nextDouble();
 
 
-            if (temperaturas[i] > 30) {
-                diasAcimaDe30++;
+            if (i==0 || consumo[i] > maiorConsumo) {
+                maiorConsumo = consumo[i];
+                setorMaiorConsumo = i + 1;
             }
         }
 
 
         System.out.println("===== RESULTADOS =====");
-        System.out.println("Quantidade de dias acima de 30°C: " + diasAcimaDe30);;
+        System.out.println("Setor que mais consumiu água: " + setorMaiorConsumo);
+        System.out.println("Maior consumo: " + maiorConsumo + " litros");
 
     }
 }
