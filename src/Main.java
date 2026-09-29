@@ -5,30 +5,24 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        double[] producao = new double[7];
+        double[] temperaturas = new double[10];
 
-        double total = 0;
-        double maior = 0;
+        int diasAcimaDe30 = 0;
 
-        for (int i = 0; i < producao.length; i++) {
+        for (int i = 0; i < temperaturas.length; i++) {
 
-            System.out.print("Digite a produção da semana " + (i + 1) + ", em toneladas: ");
-            producao[i] = entrada.nextDouble();
+            System.out.print("Digite a temperatura do dia " + (i + 1) + ", em °C: ");
+            temperaturas[i] = entrada.nextDouble();
 
-            total += producao[i];
 
-            if (i == 0 || producao[i] > maior) {
-                maior = producao[i];
+            if (temperaturas[i] > 30) {
+                diasAcimaDe30++;
             }
         }
 
-        double media = total / producao.length;
 
         System.out.println("===== RESULTADOS =====");
-        System.out.println("Produção total: " + total + " toneladas");
-        System.out.println("Média semanal: " + media + " toneladas");
-        System.out.println("Maior produção registrada: " + maior + " toneladas");
+        System.out.println("Quantidade de dias acima de 30°C: " + diasAcimaDe30);;
 
-        entrada.close();
     }
 }
