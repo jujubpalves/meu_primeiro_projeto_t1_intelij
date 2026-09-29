@@ -5,27 +5,30 @@ public class Main {
 
         Scanner entrada = new Scanner(System.in);
 
-        double[] consumo = new double[12];
+        // Vetor para armazenar a produção dos 5 talhões
+        double[] producao = new double[5];
 
-        double maiorConsumo =0;
-        int setorMaiorConsumo = 0;
+        double total = 0;
 
-        for (int i = 0; i < consumo.length; i++) {
+        // Entrada da produção de cada talhão
+        for (int i = 0; i < producao.length; i++) {
 
-            System.out.print("Digite o consumo de água do setor  " + (i + 1) + ", em litros: ");
-            consumo[i] = entrada.nextDouble();
+            System.out.print("Digite a produção do talhão " + (i + 1) + ", em kg: ");
+            producao[i] = entrada.nextDouble();
 
-
-            if (i==0 || consumo[i] > maiorConsumo) {
-                maiorConsumo = consumo[i];
-                setorMaiorConsumo = i + 1;
-            }
+            // Soma a produção ao total
+            total += producao[i];
         }
 
+        // Mostra a produção de cada talhão
+        System.out.println("\n===== PRODUÇÃO POR TALHÃO =====");
 
-        System.out.println("===== RESULTADOS =====");
-        System.out.println("Setor que mais consumiu água: " + setorMaiorConsumo);
-        System.out.println("Maior consumo: " + maiorConsumo + " litros");
+        for (int i = 0; i < producao.length; i++) {
+            System.out.println("Talhão " + (i + 1) + ": " + producao[i] + " kg");
+        }
+
+        // Mostra o total geral
+        System.out.println("\nTotal geral produzido: " + total + " kg");
 
     }
 }
