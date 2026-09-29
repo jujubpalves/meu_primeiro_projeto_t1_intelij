@@ -2,33 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner entrada = new Scanner(System.in);
+        double[] umidade = new double[8];
+        int contador = 0;
 
-        // Vetor para armazenar a produção dos 5 talhões
-        double[] producao = new double[5];
-
-        double total = 0;
-
-        // Entrada da produção de cada talhão
-        for (int i = 0; i < producao.length; i++) {
-
-            System.out.print("Digite a produção do talhão " + (i + 1) + ", em kg: ");
-            producao[i] = entrada.nextDouble();
-
-            // Soma a produção ao total
-            total += producao[i];
+        // Entrada dos valores
+        for (int i = 0; i < 8; i++) {
+            System.out.print("Digite a umidade da área " + (i + 1) + " (%): ");
+            umidade[i] = scanner.nextDouble();
         }
 
-        // Mostra a produção de cada talhão
-        System.out.println("\n===== PRODUÇÃO POR TALHÃO =====");
-
-        for (int i = 0; i < producao.length; i++) {
-            System.out.println("Talhão " + (i + 1) + ": " + producao[i] + " kg");
+        // Conta as áreas com umidade inferior a 40%
+        for (int i = 0; i < 8; i++) {
+            if (umidade[i] < 40) {
+                contador++;
+            }
         }
 
-        // Mostra o total geral
-        System.out.println("\nTotal geral produzido: " + total + " kg");
+        System.out.println("Quantidade de áreas com umidade inferior a 40%: " + contador);
 
     }
 }
