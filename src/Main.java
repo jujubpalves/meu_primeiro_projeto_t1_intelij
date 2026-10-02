@@ -1,39 +1,37 @@
 import java.util.Scanner;
 
-//Atividade 8 - Controle de Pragas
+//Atividade 9 - Mapa de Fertilidade do
+//Solo
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[][] matriz = new int[5][5];
-
-        int maior = 0;
-        int linhaMaior = 0;
-        int colunaMaior = 0;
+        int[][] matriz = new int[6][6];
 
         // Preenchendo a matriz
-        System.out.println("Digite a quantidade de focos de pragas:");
+        System.out.println("Digite os índices de fertilidade:");
 
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 6; j++) {
                 System.out.print("Região [" + i + "][" + j + "]: ");
                 matriz[i][j] = scanner.nextInt();
-
-                // Verifica se é o maior valor
-                if (matriz[i][j] > maior) {
-                    maior = matriz[i][j];
-                    linhaMaior = i;
-                    colunaMaior = j;
-                }
             }
         }
 
-        // Resultado
-        System.out.println("\nRegião com maior quantidade de focos:");
-        System.out.println("Linha: " + linhaMaior);
-        System.out.println("Coluna: " + colunaMaior);
-        System.out.println("Quantidade de focos: " + maior);
+        // Calculando a média de cada linha
+        System.out.println("\nMédia de fertilidade de cada linha:");
 
+        for (int i = 0; i < 6; i++) {
+            int soma = 0;
+
+            for (int j = 0; j < 6; j++) {
+                soma += matriz[i][j];
+            }
+
+            double media = (double) soma / 6;
+
+            System.out.println("Linha " + (i + 1) + ": " + media);
+        }
 
     }
 }
