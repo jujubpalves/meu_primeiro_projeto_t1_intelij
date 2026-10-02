@@ -1,37 +1,48 @@
 import java.util.Scanner;
 
-//Atividade 9 - Mapa de Fertilidade do
-//Solo
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[][] matriz = new int[6][6];
+        int[][] producao = new int[4][12];
 
         // Preenchendo a matriz
-        System.out.println("Digite os índices de fertilidade:");
+        System.out.println("Digite a produção de cada pomar durante os 12 meses:");
 
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                System.out.print("Região [" + i + "][" + j + "]: ");
-                matriz[i][j] = scanner.nextInt();
+        for (int i = 0; i < 4; i++) {
+            System.out.println("\nPomar " + (i + 1));
+
+            for (int j = 0; j < 12; j++) {
+                System.out.print("Mês " + (j + 1) + ": ");
+                producao[i][j] = scanner.nextInt();
             }
         }
 
-        // Calculando a média de cada linha
-        System.out.println("\nMédia de fertilidade de cada linha:");
+        int maiorProducao = 0;
+        int pomarMaior = 0;
 
-        for (int i = 0; i < 6; i++) {
-            int soma = 0;
+        // Calculando a produção anual de cada pomar
+        for (int i = 0; i < 4; i++) {
+            int total = 0;
 
-            for (int j = 0; j < 6; j++) {
-                soma += matriz[i][j];
+            for (int j = 0; j < 12; j++) {
+                total += producao[i][j];
             }
 
-            double media = (double) soma / 6;
+            System.out.println("\nProdução anual do Pomar " + (i + 1) + ": " + total);
 
-            System.out.println("Linha " + (i + 1) + ": " + media);
+            // Verifica qual pomar teve a maior produção
+            if (total > maiorProducao) {
+                maiorProducao = total;
+                pomarMaior = i;
+            }
         }
+
+        // Resultado
+        System.out.println("\nPomar com maior produção anual: Pomar " + (pomarMaior + 1));
+        System.out.println("Produção total: " + maiorProducao);
+
 
     }
 }
+
