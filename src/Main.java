@@ -1,33 +1,38 @@
 import java.util.Scanner;
 
-// Vetores e Matrizes
-// Atividade 7 - Monitoramento de Chuva
-
+//Atividade 8 - Controle de Pragas
 public class Main {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        double[][] chuva = new double[7][4];
-        double[] totalPorArea = new double[4];
+        int[][] matriz = new int[5][5];
 
-        for (int dia = 0; dia < 7; dia++) {
-            System.out.printf("Registro Dia %d \n", dia + 1);
-            for (int area = 0; area < 4; area++) {
-                System.out.printf("Digite a quantidade de chuva registrada na Área %d (mm): ", area + 1);
-                chuva[dia][area] = entrada.nextDouble();
+        int maior = 0;
+        int linhaMaior = 0;
+        int colunaMaior = 0;
+
+        // Preenchendo a matriz
+        System.out.println("Digite a quantidade de focos de pragas:");
+
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print("Região [" + i + "][" + j + "]: ");
+                matriz[i][j] = scanner.nextInt();
+
+                // Verifica se é o maior valor
+                if (matriz[i][j] > maior) {
+                    maior = matriz[i][j];
+                    linhaMaior = i;
+                    colunaMaior = j;
+                }
             }
         }
 
-        for (int area = 0; area < 4; area++) {
-            for (int dia = 0; dia < 7; dia++) {
-                totalPorArea[area] += chuva[dia][area];
-            }
-        }
-
-        System.out.println("\n Total de Chuva por Área (em mm)");
-        for (int area = 0; area < 4; area++) {
-            System.out.printf("Área %d: %.2f mm\n", (area + 1), totalPorArea[area]);
-        }
+        // Resultado
+        System.out.println("\nRegião com maior quantidade de focos:");
+        System.out.println("Linha: " + linhaMaior);
+        System.out.println("Coluna: " + colunaMaior);
+        System.out.println("Quantidade de focos: " + maior);
 
 
     }
