@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        System.out.print("Digite o número: ");
+        System.out.print("Digite o número:  ");
         int num = entrada.nextInt();
         System.out.println("O dobro do valor é: " + dobrar(num));
 
