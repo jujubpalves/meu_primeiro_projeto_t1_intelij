@@ -1,25 +1,31 @@
-package org.example;
+
 import java.util.Scanner;
 
-//Lista de Exercicios sobre FUNÇÕES
-//Exercício 5: Função para Calcular a Média de Três Notas
 
-public class Main {
-    public static double calcularMedia(double n1, double n2, double n3) {
-        return (n1 + n2 + n3) / 3;
+
+public static int maiornumero(int num1, int num2, int num3){
+    if (num2 > num1 && num2 > num3){
+        return num2;
+    } if (num1 > num2 && num1 > num3){
+        return num1;
+    } else{
+        return num3;
     }
+}
 
-    public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite a primeira nota: ");
-        double n1 = entrada.nextDouble();
-        System.out.println("Digite a segunda nota: ");
-        double n2 = entrada.nextDouble();
-        System.out.println("Digite a terceira nota: ");
-        double n3 = entrada.nextDouble();
+public void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Digite o valor 1: ");
+    int num1 = sc.nextInt();
+    System.out.println("Digite o valor 2: ");
+    int num2 = sc.nextInt();
+    System.out.println("Digite o valor 3: ");
+    int num3 = sc.nextInt();
 
-        double media = calcularMedia(n1, n2, n3);
-        System.out.println("A média é: " + media);
+    int maior = maiornumero(num1,num2,num3);
+    System.out.print("o maior numero é " + maior);
 
-    }
+
+
+
 }
