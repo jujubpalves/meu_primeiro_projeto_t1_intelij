@@ -1,29 +1,25 @@
-package com.example;
-import java.io.FileReader;
-import java.io.Reader;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
-
+//Leitura de Arquivos Classes Buffers
+//Desafio 2 - Contar Dispositivos
 public class Main {
     public static void main(String[] args) throws IOException {
-        String arquivo = "C://Users//56576890893.SESISENAI//Downloads//ativos.csv";
-        BufferedReader leitor =
-                new BufferedReader(
-                        new FileReader(arquivo));
-        String linha;
-        leitor.readLine();
-        while((linha = leitor.readLine()) != null){
+        String arquivo = "C:\\Users\\Downloads\\ativos.csv";
+        try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
+            String linha;
+            int total = 0;
 
-            String[] dado = linha.split(",");
+            while ((linha = leitor.readLine()) != null) {
+                total++;
+            }
 
-            String host = dado[0];
-            String ip = dado[1];
-            String sistema = dado[2];
+            System.out.println("Total de dispositivos encontrados: " + total);
 
-            System.out.println("Host: " + host);
-            System.out.println("IP: " + ip);
-            System.out.println("Sistema: " + sistema);
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
 
         }
 
