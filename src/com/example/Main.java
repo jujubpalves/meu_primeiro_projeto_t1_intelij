@@ -1,4 +1,6 @@
+
 import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 //Desafio 2 - Contar Dispositivos
 public class Main {
     public static void main(String[] args) throws IOException {
-        String arquivo = "C:\\Users\\Downloads\\ativos.csv";
+        String arquivo = "C:/Users/56576890893/Downloads/ativos.csv";
         try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
             String linha;
             int total = 0;
