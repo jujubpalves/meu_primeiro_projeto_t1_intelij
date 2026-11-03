@@ -21,7 +21,7 @@ public class Main {
                     if (sistema.equalsIgnoreCase("Windows")) {
                         System.out.println("IPs Windows: " + ip);
                     }
-                }
+                 }
             }
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
